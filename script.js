@@ -17,14 +17,29 @@ const clearBtn = document.getElementById("clear-btn")
 let expression = expression_space.value || 0
 let answer = answer_space.value || 0
 
+const updateInterface = ()=>{
+
+    console.log(expression+" "+answer)
+    expression_space.value =expression
+    answer_space.innerHTML = answer
+}
+
 const clickNumber = (element)=>{
     const number = element.getAttribute('data-number')
-    expression += number+" "
+    if(expression == 0)
+        expression = number
+    else
+        expression = expression + ""+number
+
+    updateInterface()
 }
 
 const clickOperator = (element)=>{
     const operator = element.getAttribute('data-value')
-    alert(operator)
+   
+        expression = expression + ""+operator
+
+    updateInterface()
 }
 
 const clearNumbers = ()=>{
@@ -48,7 +63,8 @@ const addComma = ()=>{
 }
 
 const clickEqualsBtn = ()=>{
-    alert("=")
+    const answer = Function('"use strict"; return (' + expression + ')')();
+    answer_space.innerHTML=answer
 }
 
 const clearHistory = ()=>{
@@ -56,12 +72,12 @@ const clearHistory = ()=>{
 }
 
 const deleteNum = ()=>{
-    alert("one")
+    expression = expression.slice(0,-1)
+    updateInterface()
 }
 
-console.log(expression+" "+answer)
-expression_space.value =expression
-answer_space.innerHTML = answer
+
+expression_space.addEventListener("input", e=>expression = e.target.value)
 
 clearNumBtn.addEventListener('click', clearNumbers)
 parenthesisBtn.addEventListener('click', addParenthesis)
