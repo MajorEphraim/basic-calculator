@@ -12,104 +12,104 @@
     <div class="container">
         <div class="calculator">
             <div class="screen">
-                <input type="number" pattern="\d*" value="0" id="operation" maxlength="16"/>
-                <p id="answer">16</p>
+                <input type="number" id="operation" maxlength="14"/>
+                <p id="answer">0</p>
             </div>
             <div class="buttons">
                 <div class="delete-btn-container">
-                    <span>
+                    <span id="delete-btn">
                         <i class="fa-solid fa-delete-left" style="font-size: 25px; color: #d9d9d9; margin: 2px; margin-right: 8px;"></i>
                     </span>
                 </div>
 
                 <div class="numeric-btns">
                     <div class="first-row-btns">
-                        <div class="operator-btn">
+                        <div id="clear-num-btn" class="operator-btn">
                             <p class="btn-text">C</p>
                         </div>
 
-                        <div class="operator-btn">
+                        <div id="parenthesis-btn" class="operator-btn">
                             <p class="btn-text">()</p>
                         </div>
 
-                        <div class="operator-btn">
+                        <div id="percentage-btn" class="operator-btn">
                             <p class="btn-text">%</p>
                         </div>
 
-                        <div class="operator-btn">
+                        <div id="divide-btn" class="operator-btn" data-value="÷" onclick="clickOperator(this)" >
                             <p class="btn-text">÷</p>
                         </div>
                     </div>
 
                     <div class="second-row-btns">
-                        <div class="number-btn">
+                        <div id="btn-7" class="number-btn" data-number="7" onclick="clickNumber(this)">
                             <p class="btn-text">7</p>
                         </div>
 
-                        <div class="number-btn">
+                        <div id="btn-8" class="number-btn" data-number="8" onclick="clickNumber(this)">
                             <p class="btn-text">8</p>
                         </div>
 
-                        <div class="number-btn">
+                        <div id="btn-9" class="number-btn" data-number="9" onclick="clickNumber(this)">
                             <p class="btn-text">9</p>
                         </div>
 
-                        <div class="operator-btn">
+                        <div id="multiply-btn" class="operator-btn" data-value="×" onclick="clickOperator(this)">
                             <p class="btn-text">×</p>
                         </div>
                     </div>
 
                     <div class="third-row-btns">
-                        <div class="number-btn">
+                        <div id="btn-4" class="number-btn" data-number="4" onclick="clickNumber(this)">
                             <p class="btn-text">4</p>
                         </div>
 
-                        <div class="number-btn">
+                        <div id="btn-5" class="number-btn" data-number="5" onclick="clickNumber(this)">
                             <p class="btn-text">5</p>
                         </div>
 
-                        <div class="number-btn">
+                        <div id="btn-6" class="number-btn" data-number="6" onclick="clickNumber(this)">
                             <p class="btn-text">6</p>
                         </div>
 
-                        <div class="operator-btn">
+                        <div id="minus-btn" class="operator-btn" data-value="-" onclick="clickOperator(this)">
                             <p class="btn-text">-</p>
                         </div>
                     </div>
 
                     <div class="forth-row-btns">
-                        <div class="number-btn">
+                        <div id="btn-1" class="number-btn" data-number="1" onclick="clickNumber(this)">
                             <p class="btn-text">1</p>
                         </div>
 
-                        <div class="number-btn">
+                        <div id="btn-2" class="number-btn" data-number="2" onclick="clickNumber(this)">
                             <p class="btn-text">2</p>
                         </div>
 
-                        <div class="number-btn">
+                        <div id="btn-3" class="number-btn" data-number="3" onclick="clickNumber(this)">
                             <p class="btn-text">3</p>
                         </div>
 
-                        <div class="operator-btn">
+                        <div id="plus-btn" class="operator-btn" data-value="+" onclick="clickOperator(this)">
                             <p class="btn-text">+</p>
                         </div>
                     </div>
 
                    
                     <div class="last-row-btns">
-                        <div class="text-btn">
+                        <div id="negation-btn" class="text-btn">
                             <p class="btn-text">+/-</p>
                         </div>
 
-                        <div class="number-btn">
+                        <div id="btn-0" class="number-btn" data-number="0" onclick="clickNumber(this)">
                             <p class="btn-text">0</p>
                         </div>
 
-                        <div class="text-btn">
+                        <div id="comma-btn" class="text-btn">
                             <p class="btn-text">,</p>
                         </div>
 
-                        <div class="equals-btn">
+                        <div id="equals-btn" class="equals-btn">
                             <p class="btn-text">=</p>
                         </div>
                     </div>
