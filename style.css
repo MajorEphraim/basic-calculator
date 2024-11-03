@@ -26,9 +26,9 @@
 }
 
 #operation{
-    font-size: 45px;
+    font-size: 47px;
     text-align: right;
-    width: 400px;
+    width: 380px;
     resize: none;
     background-color: transparent;
     border: none;
@@ -39,7 +39,7 @@
 #answer{
     color: #DAE3E9;
     font-size: 30px;
-    margin-right: 2px;
+    margin-right: 8px;
 }
 
 .delete-btn-container{
@@ -49,18 +49,24 @@
     justify-content: flex-end;
 }
 
+.numeric-btns{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .first-row-btns, .second-row-btns, .third-row-btns, .forth-row-btns, .last-row-btns{
     display: flex;
     flex-direction: row;
 }
 
 .operator-btn, .number-btn, .text-btn, .equals-btn{
-    height: 100px;
-    width: 100px;
+    height: 90px;
+    width: 90px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 2px;
+    margin: 4px;
 }
 
 .operator-btn{
@@ -80,7 +86,7 @@
 }
 
 .btn-text{
-    font-size: 40px;
+    font-size: 45px;
     color: #fff;
 }
 
@@ -107,7 +113,7 @@
 }
 
 .history-answer{
-    font-size: 25px;
+    font-size: 28px;
     color: #5BE56E;
     margin: 0;
 }
