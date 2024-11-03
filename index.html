@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="screen">
+                <input type="number" pattern="\d*" value="0" id="operation" maxlength="16"/>
+                <p id="answer">16</p>
+            </div>
+            <div class="buttons">
+                <div class="delete-btn-container">
+                    <span>
+                        <i class="fa-solid fa-delete-left" style="font-size: 25px; color: #d9d9d9; margin: 2px;"></i>
+                    </span>
+                </div>
+
+                <div class="numeric-btns">
+                    <div class="first-row-btns">
+                        <div class="operator-btn">
+                            <p class="btn-text">C</p>
+                        </div>
+
+                        <div class="operator-btn">
+                            <p class="btn-text">()</p>
+                        </div>
+
+                        <div class="operator-btn">
+                            <p class="btn-text">%</p>
+                        </div>
+
+                        <div class="operator-btn">
+                            <p class="btn-text">÷</p>
+                        </div>
+                    </div>
+
+                    <div class="second-row-btns">
+                        <div class="number-btn">
+                            <p class="btn-text">7</p>
+                        </div>
+
+                        <div class="number-btn">
+                            <p class="btn-text">8</p>
+                        </div>
+
+                        <div class="number-btn">
+                            <p class="btn-text">9</p>
+                        </div>
+
+                        <div class="operator-btn">
+                            <p class="btn-text">×</p>
+                        </div>
+                    </div>
+
+                    <div class="third-row-btns">
+                        <div class="number-btn">
+                            <p class="btn-text">4</p>
+                        </div>
+
+                        <div class="number-btn">
+                            <p class="btn-text">5</p>
+                        </div>
+
+                        <div class="number-btn">
+                            <p class="btn-text">6</p>
+                        </div>
+
+                        <div class="operator-btn">
+                            <p class="btn-text">-</p>
+                        </div>
+                    </div>
+
+                    <div class="forth-row-btns">
+                        <div class="number-btn">
+                            <p class="btn-text">1</p>
+                        </div>
+
+                        <div class="number-btn">
+                            <p class="btn-text">2</p>
+                        </div>
+
+                        <div class="number-btn">
+                            <p class="btn-text">3</p>
+                        </div>
+
+                        <div class="operator-btn">
+                            <p class="btn-text">+</p>
+                        </div>
+                    </div>
+
+                   
+                    <div class="last-row-btns">
+                        <div class="text-btn">
+                            <p class="btn-text">+/-</p>
+                        </div>
+
+                        <div class="number-btn">
+                            <p class="btn-text">0</p>
+                        </div>
+
+                        <div class="text-btn">
+                            <p class="btn-text">,</p>
+                        </div>
+
+                        <div class="equals-btn">
+                            <p class="btn-text">=</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="history">
+            <p>History</p>
+            <div class="history-content">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
