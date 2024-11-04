@@ -146,3 +146,11 @@
     font-size: 20px;
 }
 
+.placeholder{
+    font-style: italic;
+    font-size: 20px;
+    color: #fff;
+    opacity: .5;
+    margin-left: 15px;
+}
+
