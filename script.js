@@ -39,8 +39,15 @@ const updateInterface = ()=>{
 }
 
 const makeCalculations = ()=>{
-    let newExpression = expression.replace(/×/g, "*")
+
+    //put * where there is a match
+    let regularExp =  /(?<=[\d\)])\(/g
+    let updateExp = expression.replace(regularExp, '*(')
+
+    //replace × with *, and ÷ with / 
+    let newExpression = updateExp.replace(/×/g, "*")
     let finalExpression = newExpression.replace(/÷/g, "/")
+
     return Function('"use strict"; return (' + finalExpression + ')')()
 }
 
