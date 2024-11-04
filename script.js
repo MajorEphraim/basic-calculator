@@ -1,6 +1,7 @@
 const expression_space = document.getElementById("operation")
 const answer_space = document.getElementById("answer")
 const history_space = document.querySelector(".history-content");
+const placeholderText = document.getElementById("placeholder")
 
 //buttons
 const equalsBtn = document.getElementById("equals-btn")
@@ -14,8 +15,7 @@ const clearNumBtn = document.getElementById("clear-num-btn")
 const deleteBtn = document.getElementById("delete-btn")
 const clearBtn = document.getElementById("clear-btn")
 
-
-let expression = expression_space.value || 0
+let expression = expression_space.value || ""
 let answer = answer_space.value || 0
 let isOpen = false
 let counter = 0
@@ -47,7 +47,7 @@ const makeCalculations = ()=>{
 const clickNumber = (element)=>{
     const number = element.getAttribute('data-number')
    
-    if(expression == 0)
+    if(expression == "0")
         expression = number
     else
         expression = expression + ""+number
@@ -63,7 +63,7 @@ const clickOperator = (element)=>{
     else if(answer == 0)
         expression = expression + ""+operator
     else{
-        expression = makeCalculations() + operator
+        expression = (makeCalculations() + operator)+""
         answer = 0
     }
 
@@ -71,29 +71,31 @@ const clickOperator = (element)=>{
 }
 
 const clearNumbers = ()=>{
-    expression = 0
+    expression = "0"
     answer = 0
     updateInterface()
 }
 
 const addParenthesis = ()=>{
     
-    if(expression == 0) {
-        expression = "("
-        updateInterface()
-        return
-    }
-
     let lastChar = expression.slice(-1);
-    if((isOpen && !isNaN(Number(lastChar))) || (!isOpen && counter > 0 && (!isNaN(Number(lastChar)) || lastChar == ")"))){
-        expression = expression+")"
-        isOpen = false
-        counter--
-    }else{
-        expression = expression+"("
+    let isOpen = false
+    let difference  = (expression.split("(").length - 1) - (expression.split(")").length - 1)
+    
+    if(expression.lastIndexOf("(") > expression.lastIndexOf(")"))
         isOpen = true
-        counter++
-    }
+    
+    if(expression == "" || expression == "0"){
+        expression = "("
+    }else if(isOpen && !isNaN(Number(lastChar))){
+        expression = expression + ")"
+    }else if(isOpen && isNaN(Number(lastChar)))
+        expression = expression + "("
+    else if(!isOpen && difference > 0)
+        expression = expression + ")"
+    else
+        expression = expression + "("
+
 
     updateInterface()
 }
@@ -126,9 +128,9 @@ const findPercenatage = ()=>{
     let lastIndex = findLastOperatorInd()
 
    if(lastIndex >-1 && answer ==0)
-     expression =  expression.slice(0, lastIndex+1) +  Function('"use strict"; return (' +  expression.slice(lastIndex+1)  + ')')()/100
+     expression = ( expression.slice(0, lastIndex+1) +  Function('"use strict"; return (' +  expression.slice(lastIndex+1)  + ')')()/100)+""
    else{
-       expression =  makeCalculations()/100
+       expression =  (makeCalculations()/100)+""
        answer = 0
    }
 
@@ -142,7 +144,7 @@ const negateNum = ()=>{
     if(lastIndex > -1 && answer ==0)
         expression = expression.slice(0, lastIndex+1)+"(-"+ expression.slice(lastIndex+1)+")"
     else{
-        expression = makeCalculations()* -1
+        expression = (makeCalculations()* -1)+""
         answer = 0
     }
     updateInterface()
@@ -153,17 +155,12 @@ const addComma = ()=>{
     updateInterface()
 }
 
-const clickEqualsBtn = ()=>{
-    const value = makeCalculations()
-
-    history_space.appendChild(createHistoryContent(expression+" =", value))
-    answer_space.innerHTML= value
-    answer =value
-    updateInterface()
-}
-
 const clearHistory = ()=>{
     history_space.innerHTML = ""
+    placeholderText.innerHTML = "No calculations made yet"
+    placeholderText.style.display = "block"
+
+    history_space.appendChild(placeholderText)
 }
 
 const deleteNum = ()=>{
@@ -171,6 +168,15 @@ const deleteNum = ()=>{
     updateInterface()
 }
 
+const clickEqualsBtn = ()=>{
+    const value = makeCalculations()
+    
+    history_space.appendChild(createHistoryContent(expression+" =", value))
+    answer_space.innerHTML= value
+    answer =value
+    placeholderText.style.display = history_space.children.length >1 ?"none":"block"
+    updateInterface()
+}
 
 expression_space.addEventListener("input", e=>expression = e.target.value)
 
