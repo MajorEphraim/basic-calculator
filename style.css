@@ -31,6 +31,10 @@
     opacity: 0.8;
 }
 
+#history-btn{
+    display: none;
+}
+
 .calculator{
     width: 400px;
     background-color: #094A7C;
@@ -176,5 +180,201 @@
     color: #fff;
     opacity: .5;
     margin-left: 15px;
+}
+
+@media (max-width:600px) {
+    .container{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .calculator-history{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    
+    .heading-container{
+        height: 80px;
+        width: 95%;
+        background-color:#094A7C ;
+        margin-bottom: 100px;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px;
+    }
+    
+    .heading{
+        color: #fff;
+        font-size: 15px;
+        opacity: 0.8;
+    }
+
+    #history-btn{
+        display: block;
+    }
+    
+    .calculator{
+        width: 90%;
+        background-color: #094A7C;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .screen{
+        width: 100%;
+        height: 170px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-top: 15px;
+    }
+    
+    #operation{
+        font-size: 47px;
+        text-align: right;
+        width: 380px;
+        resize: none;
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        overflow: hidden;
+    }
+    
+    #answer{
+        color: #DAE3E9;
+        font-size: 30px;
+        margin-right: 8px;
+    }
+    
+    .delete-btn-container{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    
+    .numeric-btns{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .first-row-btns, .second-row-btns, .third-row-btns, .forth-row-btns, .last-row-btns{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .operator-btn, .number-btn, .text-btn, .equals-btn{
+        height: 20vw;
+        width: 20vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 4px;
+    }
+    
+    .operator-btn{
+        background-color: #3284BB;
+    }
+    
+    .number-btn{
+        background-color: #D9D9D9;
+    }
+    
+    .text-btn{
+        background-color: #DAE3E9;
+    }
+    
+    .equals-btn{
+        background-color: #5BE56E;
+    }
+    
+    .btn-text{
+        font-size: 45px;
+        color: #fff;
+    }
+
+    .history{
+        position: absolute;
+        display: none;
+        z-index: 3;
+        margin-top: 40vh;
+    }
+    
+    .history-content{
+        height: 400px;
+        width: 300px;
+        background-color: #094A7C;
+        padding: 20px;
+        overflow: auto;
+    }
+    
+    .operation-answer{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-top: 12px;
+    }
+    
+    .history-operation{
+        font-size: 20px;
+        color: #fff;
+        margin: 0;
+    }
+    
+    .history-answer{
+        font-size: 28px;
+        color: #5BE56E;
+        margin: 0;
+    }
+    
+    .history-text{
+        font-size: 25px;
+        color: #000;
+    }
+    
+    .btn-container{
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    
+    #clear-btn{
+        width: 80px;
+        height: 30px;
+        background-color: #A6A4A4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+    }
+    
+    .clear-btn-text{
+        color: #fff;
+        font-size: 20px;
+    }
+    
+    #placeholder{
+        font-style: italic;
+        font-size: 20px;
+        color: #fff;
+        opacity: .5;
+        margin-left: 15px;
+    }
+    
 }
 

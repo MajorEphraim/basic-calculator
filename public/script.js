@@ -2,8 +2,6 @@ const expression_space = document.getElementById("operation")
 const answer_space = document.getElementById("answer")
 const history_space = document.querySelector(".history-content");
 const placeholderText = document.getElementById("placeholder")
-const history = document.querySelector(".history");
-const calculator = document.querySelector(".calculator");
 
 //buttons
 const equalsBtn = document.getElementById("equals-btn")
@@ -11,8 +9,6 @@ const parenthesisBtn = document.getElementById("parenthesis-btn")
 const percentageBtn = document.getElementById("percentage-btn")
 const negationBtn = document.getElementById("negation-btn")
 const commaBtn = document.getElementById("comma-btn")
-const historyBtn = document.getElementById("history-btn")
-
 
 //clearing buttons
 const clearNumBtn = document.getElementById("clear-num-btn")
@@ -190,17 +186,6 @@ const clickEqualsBtn = ()=>{
 }
 
 expression_space.addEventListener("input", e=>expression = e.target.value)
-historyBtn.addEventListener('click', ()=>{
-
-    if(history.style.display == 'none'){
-        history.style.display = 'block'
-        calculator.style.display = 'none'
-    }else{
-        history.style.display = 'none'
-        calculator.style.display = 'block'
-    }
-})
-
 
 clearNumBtn.addEventListener('click', clearNumbers)
 parenthesisBtn.addEventListener('click', addParenthesis)
@@ -210,7 +195,6 @@ commaBtn.addEventListener('click', addComma)
 equalsBtn.addEventListener('click', clickEqualsBtn)
 clearBtn.addEventListener('click', clearHistory)
 deleteBtn.addEventListener('click', deleteNum)
-
 
 
 
